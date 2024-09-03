@@ -36,9 +36,12 @@ git clone https://github.com/yourusername/receipt-processor.git
 cd receipt-processor
 ```
 
-2. 必要なライブラリをインストールします。
+2. 仮装環境を作成し、必要なライブラリをインストールします。
 
 ```
+python -m venv myvenv
+source myvenv/bin/activate
+
 pip install -r requirements.txt
 ```
 
