@@ -58,10 +58,11 @@ OPENAI_API_KEY=your_api_key_here
 2. スクリプトを実行します。
 
 ```
-python receipt_processor.py
+python index.py
 ```
 
 3. 処理結果は`receipts.xlsx`ファイルに保存されます。
+　　Excelファイルがなければ作成し、存在していれば最終行に情報を記載します。
 
 4. 処理済みの画像は`reciet_done`ディレクトリに移動されます。
 
@@ -70,7 +71,7 @@ python receipt_processor.py
 ```
 receipt-processor/
 │
-├── receipt_processor.py  # メインスクリプト
+├── index.py  # メインスクリプト
 ├── .env                  # 環境変数（APIキー）
 ├── requirements.txt      # 必要なPythonライブラリ
 ├── reciet/               # 処理前のレシート画像を格納するディレクトリ
@@ -80,6 +81,8 @@ receipt-processor/
 
 ## 注意事項
 
+- OpenAIの画像認識機能を利用しています。一度に大量の画像を処理しようとすると読み取り精度が落ちるため
+  画像を１毎づつ処理します。
 - このスクリプトを使用するには、有効なOpenAI APIキーが必要です。
 - 大量の画像を処理する場合は、APIの使用制限と料金に注意してください。
 - レシート画像は個人情報を含む可能性があるため、適切なセキュリティ対策を講じてください。
